@@ -22,4 +22,4 @@ docker:
     ENTRYPOINT [ "tokei" ]
     CMD [ "--help" ]
     ARG image_name=tokei:latest
-    SAVE IMAGE $image_name
+    SAVE IMAGE --push $image_name

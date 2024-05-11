@@ -37,5 +37,5 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build Docker Image
+      - name: Build and Push Docker Image
         run: earthly --ci --push +docker --image_name=${{ steps.meta.outputs.tags }}
