@@ -38,4 +38,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Push Docker Image
-        run: echo ${{ steps.meta.outputs.tags }} | xargs -I {} earthly --ci --push +docker --image_name={}
+        run: earthly --ci --push +docker --image_name=$(echo '${{ steps.meta.outputs.json }}' | jq -r '.tags | join(" ")')
