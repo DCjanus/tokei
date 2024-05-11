@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: earthly/actions-setup@v1
         with:
-          version: v0.8.0
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out the repo
         uses: actions/checkout@v4
       - name: Extract metadata (tags, labels) for Docker
