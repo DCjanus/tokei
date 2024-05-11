@@ -42,4 +42,4 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker Image
-        run: earthly --push +docker --image_name=ghcr.io/${{ github.repository }}:${{ steps.meta.outputs.tags }}
+        run: earthly --push +docker --image_name=${{ steps.meta.outputs.tags }}
